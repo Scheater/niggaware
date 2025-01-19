@@ -7,43 +7,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header Section */
-header {
-    text-align: center;
-    padding: 2rem;
-    background-color: #b30000; /* Dark red */
-    color: #fff;
-    text-transform: uppercase;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-header h1 {
-    font-size: 3rem;
-    margin: 0;
-}
-
-header p {
-    font-size: 1.2rem;
-    margin: 0.5rem 0 0;
-    color: #ffe6e6; /* Light red */
-}
-
-/* Main Section */
-main {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-}
-
-.intro {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.features {
-    margin-top: 2rem;
-}
-
+/* Features Section */
 .features h2 {
     color: #ff1a1a; /* Bright red */
     margin-bottom: 1rem;
@@ -51,68 +15,55 @@ main {
     text-transform: uppercase;
 }
 
-.features ul {
+.category {
+    margin-bottom: 2rem;
+}
+
+.category h3 {
+    color: #ff4d4d; /* Light red */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.category ul {
     list-style: none;
     padding: 0;
 }
 
-.features ul li {
+.category ul li {
     background-color: #1a1a1a; /* Dark grey */
+    padding: 1rem;
     margin: 0.5rem 0;
-    padding: 1rem;
     border-left: 4px solid #b30000; /* Dark red accent */
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative; /* Needed for tooltip positioning */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.features ul li:hover {
+.category ul li:hover {
     background-color: #b30000; /* Dark red hover */
-    transform: scale(1.02); /* Slight zoom effect */
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
-/* Download Button Section */
-.download {
-    text-align: center;
-    margin: 3rem 0;
-}
-
-.download-btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: #ff1a1a; /* Bright red */
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    top: 50%;
+    left: 120%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Black with transparency */
     color: #fff;
-    font-size: 1.2rem;
-    text-decoration: none;
-    text-transform: uppercase;
+    padding: 0.5rem;
     border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(255, 26, 26, 0.4);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
 }
 
-.download-btn:hover {
-    background-color: #b30000; /* Dark red */
-    transform: scale(1.1); /* Button grows slightly */
-    box-shadow: 0 8px 20px rgba(255, 26, 26, 0.6);
+.show-tooltip {
+    opacity: 1;
+    visibility: visible;
 }
-
-/* Footer Section */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #1a1a1a; /* Dark grey */
-    color: #fff;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    border-top: 1px solid #b30000; /* Thin red line */
-}
-
-/* Shake animation for the button */
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    20%, 60% { transform: translateX(-10px); }
-    40%, 80% { transform: translateX(10px); }
-}
-
-.shake {
-    animation: shake 0.5s ease-in-out;
-}
-

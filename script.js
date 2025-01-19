@@ -1,24 +1,26 @@
-// Select the download button
-const downloadBtn = document.querySelector('.download-btn');
+// Select all feature list items
+const features = document.querySelectorAll('.category ul li');
 
-// Add a click event listener to the button
-downloadBtn.addEventListener('click', () => {
-    // Display an alert to simulate a download start
-    alert('Your download will start shortly...');
+features.forEach((feature) => {
+    let tooltipTimeout;
 
-    // Change button text and style for a "preparing" effect
-    downloadBtn.textContent = 'Preparing...';
-    downloadBtn.style.backgroundColor = '#666'; // Temporary grey color
-    downloadBtn.style.cursor = 'not-allowed'; // Show that it's processing
+    // Create the tooltip element
+    const tooltipText = feature.getAttribute('data-tooltip');
+    const tooltip = document.createElement('div');
+    tooltip.classList.add('tooltip');
+    tooltip.textContent = tooltipText;
+    feature.appendChild(tooltip);
 
-    // Add a temporary shake animation to the button
-    downloadBtn.classList.add('shake');
+    // Show the tooltip with a delay when hovering
+    feature.addEventListener('mouseenter', () => {
+        tooltipTimeout = setTimeout(() => {
+            tooltip.classList.add('show-tooltip');
+        }, 500); // Delay of 500ms
+    });
 
-    // Reset the button after 3 seconds
-    setTimeout(() => {
-        downloadBtn.textContent = 'Download Now';
-        downloadBtn.style.backgroundColor = '#ff1a1a'; // Original red color
-        downloadBtn.style.cursor = 'pointer'; // Enable pointer again
-        downloadBtn.classList.remove('shake'); // Remove the animation
-    }, 3000);
+    // Hide the tooltip when the mouse leaves
+    feature.addEventListener('mouseleave', () => {
+        clearTimeout(tooltipTimeout);
+        tooltip.classList.remove('show-tooltip');
+    });
 });
