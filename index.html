@@ -14,59 +14,76 @@
         <p>The ultimate HVH cheat for CS. Dominate with next-gen features.</p>
     </header>
 
+    <!-- Image Carousel Section -->
+    <section class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="image1.jpg" alt="Feature 1">
+                <img src="image2.jpg" alt="Feature 2">
+                <img src="image3.jpg" alt="Feature 3">
+                <img src="image4.jpg" alt="Feature 4">
+            </div>
+        </div>
+        <button class="carousel-prev">&#9664;</button>
+        <button class="carousel-next">&#9654;</button>
+        <div class="carousel-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <main>
-        <!-- Introduction Section -->
-        <section class="intro">
-            <p>Welcome to <strong>Niggaware</strong>, the future of HVH cheats. Packed with groundbreaking features and cutting-edge technology, Niggaware guarantees dominance in every match. Explore our feature-packed categories below:</p>
-        </section>
-
         <!-- Features Section -->
         <section class="features">
             <h2>Features</h2>
 
-            <!-- Visuals Category -->
-            <div class="category">
-                <h3>👁️ Visuals</h3>
-                <ul>
-                    <li data-tooltip="Player, weapon, and rank details in real-time.">ESP</li>
-                    <li data-tooltip="See through walls with full visibility.">Wallhack</li>
-                    <li data-tooltip="Highlight players with customizable colors.">Chams</li>
-                    <li data-tooltip="Add glowing effects to items and enemies.">Glow ESP</li>
-                </ul>
-            </div>
+            <div class="feature-grid">
+                <!-- Visuals Category -->
+                <div class="feature-card">
+                    <h3>👁️ Visuals</h3>
+                    <ul>
+                        <li data-tooltip="Player, weapon, and rank details in real-time.">ESP</li>
+                        <li data-tooltip="See through walls with full visibility.">Wallhack</li>
+                        <li data-tooltip="Highlight players with customizable colors.">Chams</li>
+                        <li data-tooltip="Add glowing effects to items and enemies.">Glow ESP</li>
+                    </ul>
+                </div>
 
-            <!-- Ragebot Category -->
-            <div class="category">
-                <h3>🔥 Ragebot</h3>
-                <ul>
-                    <li data-tooltip="Advanced prediction and hitbox targeting.">Aimbot</li>
-                    <li data-tooltip="Make yourself unhittable in HVH matches.">Anti-Aim</li>
-                    <li data-tooltip="Exploit latency to hit enemies after they move.">Backtrack</li>
-                    <li data-tooltip="Automatically correct enemy desyncs for precise hits.">Resolver</li>
-                </ul>
-            </div>
+                <!-- Ragebot Category -->
+                <div class="feature-card">
+                    <h3>🔥 Ragebot</h3>
+                    <ul>
+                        <li data-tooltip="Advanced prediction and hitbox targeting.">Aimbot</li>
+                        <li data-tooltip="Make yourself unhittable in HVH matches.">Anti-Aim</li>
+                        <li data-tooltip="Exploit latency to hit enemies after they move.">Backtrack</li>
+                        <li data-tooltip="Automatically correct enemy desyncs for precise hits.">Resolver</li>
+                    </ul>
+                </div>
 
-            <!-- Legitbot Category -->
-            <div class="category">
-                <h3>🎯 Legitbot</h3>
-                <ul>
-                    <li data-tooltip="Stealthy aiming without anyone noticing.">Silent Aim</li>
-                    <li data-tooltip="Automatically compensate for weapon recoil.">Recoil Control</li>
-                    <li data-tooltip="Fire automatically when your target is in sight.">Triggerbot</li>
-                    <li data-tooltip="Customizable field of view for realistic play.">FOV Adjustment</li>
-                </ul>
-            </div>
+                <!-- Legitbot Category -->
+                <div class="feature-card">
+                    <h3>🎯 Legitbot</h3>
+                    <ul>
+                        <li data-tooltip="Stealthy aiming without anyone noticing.">Silent Aim</li>
+                        <li data-tooltip="Automatically compensate for weapon recoil.">Recoil Control</li>
+                        <li data-tooltip="Fire automatically when your target is in sight.">Triggerbot</li>
+                        <li data-tooltip="Customizable field of view for realistic play.">FOV Adjustment</li>
+                    </ul>
+                </div>
 
-            <!-- Miscellaneous Features -->
-            <div class="category">
-                <h3>🛠️ Miscellaneous</h3>
-                <ul>
-                    <li data-tooltip="Permanent skins visible to everyone.">Server-Side Skin Changer</li>
-                    <li data-tooltip="Save, load, and share your setups.">Config Sharing</li>
-                    <li data-tooltip="Fully customizable with Lua support.">Lua Scripting</li>
-                    <li data-tooltip="Access any weapon or knife skin.">Inventory Changer</li>
-                </ul>
+                <!-- Miscellaneous Features -->
+                <div class="feature-card">
+                    <h3>🛠️ Miscellaneous</h3>
+                    <ul>
+                        <li data-tooltip="Permanent skins visible to everyone.">Server-Side Skin Changer</li>
+                        <li data-tooltip="Save, load, and share your setups.">Config Sharing</li>
+                        <li data-tooltip="Fully customizable with Lua support.">Lua Scripting</li>
+                        <li data-tooltip="Access any weapon or knife skin.">Inventory Changer</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
