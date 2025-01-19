@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niggaware GUI</title>
+    <link rel="stylesheet" href="gui-style.css">
+</head>
+<body>
+    <!-- GUI Wrapper -->
+    <div class="gui-wrapper">
+        <!-- Header -->
+        <div class="gui-header">
+            <h1>NIGGAWARE</h1>
+            <button class="close-btn">&times;</button>
+        </div>
+
+        <!-- Main Layout -->
+        <div class="gui-main">
+            <!-- Sidebar -->
+            <aside class="gui-sidebar">
+                <nav>
+                    <ul>
+                        <li data-tab="rage" class="active">🔥 Rage</li>
+                        <li data-tab="legit">🎯 Legit</li>
+                        <li data-tab="visuals">👁️ Visuals</li>
+                        <li data-tab="skinchanger">🔪 Skinchanger</li>
+                        <li data-tab="miscellaneous">⚙️ Miscellaneous</li>
+                        <li data-tab="configs">💾 Configs</li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Settings Content -->
+            <main class="gui-content">
+                <!-- Rage Tab -->
+                <section id="rage" class="tab active">
+                    <h2>Rage Settings</h2>
+                    <div class="settings-group">
+                        <div class="setting">
+                            <label for="rage-enabled">Enable Ragebot</label>
+                            <input type="checkbox" id="rage-enabled">
+                        </div>
+                        <div class="setting">
+                            <label for="silent-aim">Silent Aim</label>
+                            <input type="checkbox" id="silent-aim">
+                        </div>
+                        <div class="setting">
+                            <label for="field-of-view">Field of View</label>
+                            <input type="range" id="field-of-view" min="0" max="180" value="90">
+                        </div>
+                        <div class="setting">
+                            <label for="hit-chance">Hit Chance (%)</label>
+                            <input type="range" id="hit-chance" min="0" max="100" value="50">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Legit Tab -->
+                <section id="legit" class="tab">
+                    <h2>Legit Settings</h2>
+                    <div class="settings-group">
+                        <div class="setting">
+                            <label for="legit-enabled">Enable Legitbot</label>
+                            <input type="checkbox" id="legit-enabled">
+                        </div>
+                        <div class="setting">
+                            <label for="smoothness">Smoothness</label>
+                            <input type="range" id="smoothness" min="1" max="100" value="50">
+                        </div>
+                        <div class="setting">
+                            <label for="reaction-time">Reaction Time (ms)</label>
+                            <input type="range" id="reaction-time" min="0" max="1000" value="200">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Visuals Tab -->
+                <section id="visuals" class="tab">
+                    <h2>Visuals Settings</h2>
+                    <div class="settings-group">
+                        <div class="setting">
+                            <label for="esp">ESP</label>
+                            <input type="checkbox" id="esp">
+                        </div>
+                        <div class="setting">
+                            <label for="chams">Chams</label>
+                            <input type="checkbox" id="chams">
+                        </div>
+                                                <div class="setting">
+                            <label for="esp">Weapon</label>
+                            <input type="checkbox" id="Weapon">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Additional Tabs (Skinchanger, Miscellaneous, Configs) -->
+                <!-- Repeat similar structure -->
+            </main>
+        </div>
+    </div>
+
+    <script src="gui-script.js"></script>
+</body>
+</html>

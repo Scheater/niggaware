@@ -1,0 +1,235 @@
+/* Allgemeine Layout-Einstellungen */
+body {
+    margin: 0;
+    padding: 0;
+    background: #111; /* Dunkler Hintergrund */
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Haupt-GUI-Container */
+.gui-wrapper {
+    display: flex;
+    flex-direction: column; /* Header oben, Sidebar + Inhalt darunter */
+    width: 900px;
+    height: 600px;
+    background: #1a1a1a; /* Dunkler Hintergrund */
+    border: 2px solid #b30000; /* Roter Rand */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Schatten */
+    overflow: hidden;
+}
+
+/* Header */
+.gui-header {
+    background: #b30000; /* Roter Header */
+    color: white;
+    padding: -0.1rem;
+    font-size: 0.8rem;
+    font-weight: 1px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.2px solid #600000; /* Übergang */
+    flex-shrink: 0; /* Header bleibt fixiert */
+}
+
+/* Schließen-Button */
+.gui-header .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.gui-header .close-btn:hover {
+    transform: scale(1.2);
+    color: #ff4d4d;
+}
+
+/* Sidebar und Hauptinhalt */
+.gui-main {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* Sidebar (200px) und Inhalt (Rest) */
+    height: 100%; /* Füllt den Rest des Containers aus */
+    overflow: hidden;
+}
+
+/* Sidebar */
+.gui-sidebar {
+    background: #111; /* Dunkelgrau */
+    border-right: 1px solid #b30000; /* Trennlinie */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Scrollen bei langem Inhalt */
+    padding: 0;
+}
+
+.gui-sidebar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.gui-sidebar nav ul li {
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    color: #ccc; /* Hellgrau */
+    border-bottom: 1px solid #333; /* Trennlinie */
+    transition: background 0.3s, color 0.3s;
+}
+
+.gui-sidebar nav ul li.active,
+.gui-sidebar nav ul li:hover {
+    background: #b30000; /* Roter Hintergrund */
+    color: white;
+}
+
+/* Hauptinhalt */
+.gui-content {
+    background: #1a1a1a; /* Dunkler Hintergrund */
+    padding: 1.5rem;
+    overflow-y: auto; /* Scrollen bei langem Inhalt */
+}
+
+/* Tabs */
+.tab {
+    display: none; /* Standardmäßig ausgeblendet */
+}
+
+.tab.active {
+    display: block; /* Nur der aktive Tab wird angezeigt */
+}
+
+/* Einstellungen */
+.settings-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem; /* Abstand zwischen den Einstellungen */
+}
+
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222; /* Dunkleres Grau */
+    border: 1px solid #b30000; /* Roter Rand */
+    border-radius: 5px;
+    padding: 0.7rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.setting:hover {
+    transform: scale(1.02); /* Leichtes Vergrößern bei Hover */
+    box-shadow: 0 2px 15px rgba(255, 0, 0, 0.3); /* Roter Schatten */
+}
+
+/* Checkbox */
+.setting input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #b30000; /* Rot bei Aktivierung */
+    cursor: pointer;
+}
+
+/* Slider */
+.setting input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; /* Standard */
+    width: 60%;
+    height: 6px;
+    background: #333;
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.2s ease;
+}
+
+.setting input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Chrome/Safari */
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #b30000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.setting input[type="range"]::-moz-range-thumb {
+    -moz-appearance: none; /* Firefox */
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #b30000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Buttons */
+button {
+    background: #b30000;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+/* Dropdown-Menü */
+select {
+    background: #222;
+    border: 1px solid #b30000;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+select option {
+    background: #1a1a1a;
+    color: white;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Animationen */
+
+/* Fade-In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
