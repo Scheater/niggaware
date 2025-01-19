@@ -2,8 +2,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #000; /* Deep black background */
-    color: #fff; /* White text */
+    background-color: #000; /* Schwarzer Hintergrund */
+    color: #fff; /* Weiße Schrift */
+    overflow-x: hidden; /* Kein horizontales Scrollen */
     line-height: 1.6;
 }
 
@@ -11,10 +12,9 @@ body {
 header {
     text-align: center;
     padding: 2rem;
-    background-color: #b30000; /* Dark red */
+    background-color: #b30000; /* Dunkelrot */
     color: #fff;
     text-transform: uppercase;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
@@ -23,37 +23,67 @@ header h1 {
 }
 
 header p {
-    font-size: 1.2rem;
     margin: 0.5rem 0 0;
-    color: #ffe6e6; /* Light red */
+    font-size: 1.2rem;
+    color: #ffe6e6; /* Helles Rot */
 }
 
 /* Carousel Section */
 .carousel {
     position: relative;
-    overflow: hidden;
     max-width: 100%;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    overflow: hidden; /* Überschüssige Inhalte ausblenden */
 }
 
-.carousel-container {
-    display: flex;
+.carousel-wrapper {
+    display: flex; /* Horizontale Ausrichtung der Slides */
+    transition: transform 0.5s ease-in-out; /* Sanfte Bewegung beim Wechseln */
     width: 100%;
-    transition: transform 0.5s ease-in-out;
 }
 
-.carousel-slide img {
-    width: 100%;
+.carousel-item {
+    flex: 0 0 100%; /* Nur ein Slide sichtbar */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Zwei Spalten: Bild und Text */
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.carousel-item img {
+    max-width: 90%; /* Bild passt sich an die Breite an */
     height: auto;
-    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Schatten für das Bild */
 }
 
-.carousel-prev, .carousel-next {
+.carousel-text {
+    padding: 1rem;
+    text-align: left; /* Text links ausgerichtet */
+}
+
+.carousel-text h3 {
+    font-size: 1.8rem;
+    color: #ff1a1a; /* Helles Rot */
+    margin-bottom: 0.5rem;
+}
+
+.carousel-text p {
+    font-size: 1rem;
+    color: #ccc; /* Hellgrau */
+}
+
+/* Carousel Controls */
+.carousel-prev,
+.carousel-next {
     position: absolute;
-    top: 50%;
+    top: 50%; /* Zentriert in der Höhe */
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+    color: white;
     border: none;
     font-size: 2rem;
     cursor: pointer;
@@ -70,70 +100,50 @@ header p {
     right: 1rem;
 }
 
-.carousel-indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.5rem;
-}
-
-.carousel-indicators .indicator {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.carousel-indicators .indicator.active {
-    background-color: #fff;
-}
-
-/* Tooltip Styling */
-.tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 0.5rem;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 105%;
-    z-index: 10;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.show-tooltip {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Feature Grid Layout */
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+/* Features Section */
+.features {
+    text-align: center;
     padding: 2rem;
 }
 
+.features h2 {
+    color: #ff1a1a;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsives Grid */
+    gap: 1.5rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 .feature-card {
-    background-color: #1a1a1a;
-    border: 1px solid #b30000;
+    background: #1a1a1a;
+    border: 1px solid #b30000; /* Roter Rand */
     padding: 1rem;
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .feature-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(255, 26, 26, 0.4);
+    transform: scale(1.05); /* Leichtes Vergrößern bei Hover */
+    box-shadow: 0 5px 15px rgba(255, 26, 26, 0.4); /* Schatten bei Hover */
+}
+
+.feature-card h3 {
+    color: #ff4d4d; /* Helleres Rot */
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.feature-card ul {
+    list-style: none; /* Keine Aufzählungszeichen */
+    padding: 0;
+    margin: 0;
 }
 
 .feature-card ul li {
@@ -142,11 +152,52 @@ header p {
     cursor: pointer;
 }
 
-/* Footer */
+/* Tooltip Styling */
+.tooltip {
+    visibility: hidden; /* Standardmäßig unsichtbar */
+    opacity: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8); /* Dunkler Hintergrund */
+    color: #fff; /* Weiße Schrift */
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Kein Zeilenumbruch */
+    z-index: 1000; /* Tooltip immer oben anzeigen */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Sanftes Einblenden */
+    pointer-events: none; /* Tooltip blockiert keine Klicks */
+}
+
+.feature-card ul li:hover .tooltip {
+    visibility: visible;
+    opacity: 1; /* Tooltip sichtbar machen */
+}
+
+/* Download Button */
+.download {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.download-btn {
+    padding: 1rem 2rem;
+    background: #b30000; /* Roter Hintergrund */
+    color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.download-btn:hover {
+    transform: scale(1.1); /* Vergrößerung bei Hover */
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4); /* Schatteneffekt */
+}
+
+/* Footer Section */
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #1a1a1a;
-    color: #fff;
-    border-top: 1px solid #b30000;
+    background: #1a1a1a; /* Dunkelgrauer Hintergrund */
+    color: white;
+    border-top: 1px solid #b30000; /* Oberer Rand in Rot */
 }
