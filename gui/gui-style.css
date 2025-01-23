@@ -57,7 +57,7 @@ body {
 /* Sidebar und Hauptinhalt */
 .gui-main {
     display: grid;
-    grid-template-columns: 200px 1fr; /* Sidebar (200px) und Inhalt (Rest) */
+    grid-template-columns: 191px 1fr; /* Sidebar (200px) und Inhalt (Rest) */
     height: 100%; /* Füllt den Rest des Containers aus */
     overflow: hidden;
 }
@@ -89,14 +89,14 @@ body {
 
 .gui-sidebar nav ul li.active,
 .gui-sidebar nav ul li:hover {
-    background: #b30000; /* Roter Hintergrund */
+    background: rgba(186, 0, 0, 0.88); /* Roter Hintergrund */
     color: white;
 }
 
 /* Hauptinhalt */
 .gui-content {
     background: #1a1a1a; /* Dunkler Hintergrund */
-    padding: 1.5rem;
+    padding: 1.2rem;
     overflow-y: auto; /* Scrollen bei langem Inhalt */
 }
 
@@ -113,7 +113,7 @@ body {
 .settings-group {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem; /* Abstand zwischen den Einstellungen */
+    gap: 0.5rem; /* Abstand zwischen den Einstellungen */
 }
 
 .setting {
@@ -122,7 +122,7 @@ body {
     align-items: center;
     background: #222; /* Dunkleres Grau */
     border: 1px solid #b30000; /* Roter Rand */
-    border-radius: 5px;
+    border-radius: 9px;
     padding: 0.7rem;
     transition: transform 0.3s, box-shadow 0.3s;
 }

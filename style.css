@@ -15,6 +15,8 @@ header {
     background-color: #b30000; /* Dunkelrot */
     color: #fff;
     text-transform: uppercase;
+      position: relative;
+  overflow: hidden; /* Aurora-Effekt bleibt im Header-Bereich */
 }
 
 header h1 {
@@ -241,8 +243,60 @@ header p {
 /* Footer Section */
 footer {
     text-align: center;
-    padding: 1rem;
+    padding: 0.2rem;
     background: #1a1a1a; /* Dunkelgrauer Hintergrund */
     color: white;
     border-top: 1px solid #b30000; /* Oberer Rand in Rot */
 }
+
+
+
+
+
+:root {
+  --bg-header: #ff0000; /* Roter Hintergrund für den Header */
+  --fs: clamp(2rem, 8vw, 5rem); /* Dynamische Schriftgröße */
+}
+
+body {
+  background-color: #000000; /* Schwarzer Hintergrund für den Rest der Seite */
+  color: #ffffff;
+  font-family: "Inter", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  background-color: #ff0000; /* Roter Hintergrund für den Header */
+  text-align: center;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.title {
+  font-size: clamp(2rem, 8vw, 5rem); /* Dynamische Schriftgröße */
+  font-weight: 800;
+  letter-spacing: clamp(-1.75px, -0.25vw, -3.5px);
+  text-transform: uppercase;
+  position: relative;
+  background: linear-gradient(90deg, #ffffff, #ff0000, #ff5555, #ffffff); /* Farbverlauf */
+  background-size: 300% 100%; /* Breiterer Hintergrund für nahtlose Bewegung */
+  background-clip: text; /* Standard-Eigenschaft für moderne Browser */
+  -webkit-background-clip: text; /* Webkit-spezifisch */
+  -webkit-text-fill-color: transparent; /* Füllt den Text mit dem Verlauf */
+  animation: gradient-scroll 10s linear infinite; /* Langsamere Animation */
+}
+
+@keyframes gradient-scroll {
+  0% {
+    background-position: 100% 0%; /* Start vollständig rechts */
+  }
+  100% {
+    background-position: -200% 0%; /* Ende vollständig links */
+  }
+}
+
+
+
