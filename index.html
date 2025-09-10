@@ -1,134 +1,181 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="/style.css">
-<script src="/script.js" defer></script>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niggaware - The Ultimate HVH Cheat</title>
-    <!-- Verknüpfung mit der CSS-Datei -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Header Section -->
-<header>
-  <div class="content">
-    <div class="aurora-container">
-      <h1 class="title">Niggaware.cc</h1>
-    </div>
-  </div>
-  <p>The ultimate HVH cheat for CS. Dominate with next-gen features.</p>
-</header>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <title>NovaWare — HVH Feature Showcase (Closed Beta)</title>
+    <meta
+      name="description"
+      content="NovaWare — HVH feature showcase with Visuals, Legitbot, Ragebot, and more. Closed Beta."
+    />
 
+    <!-- Preload only the first hero image to help LCP -->
+    <link
+      rel="preload"
+      href="image1.jpg"
+      as="image"
+      imagesrcset="image1.jpg 1200w"
+      imagesizes="(min-width: 900px) 900px, 100vw"
+    />
 
+    <!-- App CSS / JS -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Carousel Section -->
-    <section class="carousel">
-        <div class="carousel-wrapper">
-            <!-- Slide 1 -->
-            <div class="carousel-item">
-                <img src="image1.jpg" alt="Feature 1">
-                <div class="carousel-text">
-                    <h3>visuals</h3>
-                    <p>The best and most customizable visuals, unmatched by any other cheat in terms of options.</p>
-                </div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <img src="image2.jpg" alt="Feature 2">
-                <div class="carousel-text">
-                    <h3>Legitbot</h3>
-                    <p>Stay undetected and legit with our customizable legitbot.</p>
-                </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <img src="image3.jpg" alt="Feature 3">
-                <div class="carousel-text">
-                    <h3>Ragebot</h3>
-                    <p>Dominate every match with our state-of-the-art ragebot.</p>
-                </div>
-            </div>
-            <!-- Slide 4 -->
-            <div class="carousel-item">
-                <img src="image4.jpg" alt="Feature 4">
-                <div class="carousel-text">
-                    <h3>Setings</h3>
-                    <p>Explore endless possibilities with Lua scripting and online config sharing.</p>
-                </div>
-            </div>
+    <!-- Header -->
+    <header>
+      <div class="content">
+        <div class="aurora-container">
+          <h1 class="title">NovaWare.cc</h1>
         </div>
-        <!-- Navigation Buttons -->
-        <button class="carousel-prev">&#9664;</button>
-        <button class="carousel-next">&#9654;</button>
+      </div>
+      <p class="tagline">Feature showcase for CS. Closed Beta.</p>
+    </header>
+
+    <!-- Feature Preview (Slider) -->
+    <section id="feature-preview"
+             class="slider"
+             aria-roledescription="carousel"
+             aria-label="Feature preview">
+      <!-- Inner viewport clips slides; outer section stays unclipped for arrows -->
+      <div class="slider-viewport">
+        <ul class="slider-track" role="list" aria-live="polite">
+          <!-- Slide 1 -->
+          <li class="slide" aria-current="true">
+            <figure class="slide-media">
+              <img src="image1.jpg" width="1200" height="675"
+                   alt="Visuals — customizable overlays"
+                   fetchpriority="high" decoding="async" draggable="false" />
+            </figure>
+            <div class="slide-copy">
+              <h3>Visuals</h3>
+              <p>Highly customizable visuals with plenty of options.</p>
+            </div>
+          </li>
+
+          <!-- Slide 2 -->
+          <li class="slide">
+            <figure class="slide-media">
+              <img src="image2.jpg" width="1200" height="675"
+                   alt="Legitbot — low-profile settings"
+                   loading="lazy" decoding="async" draggable="false" />
+            </figure>
+            <div class="slide-copy">
+              <h3>Legitbot</h3>
+              <p>Stay low-profile with flexible, fine-tuned settings.</p>
+            </div>
+          </li>
+
+          <!-- Slide 3 -->
+          <li class="slide">
+            <figure class="slide-media">
+              <img src="image3.jpg" width="1200" height="675"
+                   alt="Ragebot — advanced options for HVH"
+                   loading="lazy" decoding="async" draggable="false" />
+            </figure>
+            <div class="slide-copy">
+              <h3>Ragebot</h3>
+              <p>State-of-the-art options for HVH matches.</p>
+            </div>
+          </li>
+
+          <!-- Slide 4 -->
+          <li class="slide">
+            <figure class="slide-media">
+              <img src="image4.jpg" width="1200" height="675"
+                   alt="Settings — scripting & configs"
+                   loading="lazy" decoding="async" draggable="false" />
+            </figure>
+            <div class="slide-copy">
+              <h3>Settings</h3>
+              <p>Lua scripting and online config sharing.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Controls (outside the viewport edge, never clipped) -->
+      <button class="slider-nav prev" type="button" aria-label="Previous slide">◀</button>
+      <button class="slider-nav next" type="button" aria-label="Next slide">▶</button>
+
+      <!-- Dots -->
+      <div class="slider-dots" role="tablist" aria-label="Slide navigation"></div>
+
+      <noscript>
+        <p>JavaScript is disabled — the preview lists all slides vertically.</p>
+      </noscript>
     </section>
 
-    <!-- Features Section -->
-    <main>
-        <section class="features">
-            <h2>Features</h2>
-            <div class="feature-grid">
-                <!-- Visuals Feature -->
-                <div class="feature-card">
-                    <h3>👁️ Visuals</h3>
-                    <ul>
-                        <li data-tooltip="Player, weapon, and rank details in real-time.">ESP</li>
-                        <li data-tooltip="See through walls with full visibility.">Wallhack</li>
-                        <li data-tooltip="Highlight players with customizable colors.">Chams</li>
-                        <li data-tooltip="Add glowing effects to items and enemies.">Glow ESP</li>
-                    </ul>
-                </div>
+    <!-- Features -->
+    <main id="main">
+      <section class="features">
+        <h2>Features</h2>
+        <div class="feature-grid">
+          <!-- Visuals Feature -->
+          <div class="feature-card">
+            <h3>👁️ Visuals</h3>
+            <ul>
+              <li data-tooltip="Player, weapon, and rank details in real time">ESP</li>
+              <li data-tooltip="Full visibility through walls (showcase)">Wallhack</li>
+              <li data-tooltip="Highlight players with adjustable colors">Chams</li>
+              <li data-tooltip="Glow effects for items and enemies">Glow ESP</li>
+            </ul>
+          </div>
 
-                <!-- Ragebot Feature -->
-                <div class="feature-card">
-                    <h3>🔥 Ragebot</h3>
-                    <ul>
-                        <li data-tooltip="Advanced prediction and hitbox targeting.">Aimbot</li>
-                        <li data-tooltip="Make yourself unhittable in HVH matches.">Anti-Aim</li>
-                        <li data-tooltip="Exploit latency to hit enemies after they move.">Backtrack</li>
-                        <li data-tooltip="Automatically correct enemy desyncs for precise hits.">Resolver</li>
-                    </ul>
-                </div>
+          <!-- Ragebot Feature -->
+          <div class="feature-card">
+            <h3>🔥 Ragebot</h3>
+            <ul>
+              <li data-tooltip="Advanced prediction and hitbox targeting">Aimbot</li>
+              <li data-tooltip="Unhittable setups for HVH">Anti-Aim</li>
+              <li data-tooltip="Exploit late-registered hits">Backtrack</li>
+              <li data-tooltip="Correct enemy desyncs for precise hits">Resolver</li>
+            </ul>
+          </div>
 
-                <!-- Legitbot Feature -->
-                <div class="feature-card">
-                    <h3>🎯 Legitbot</h3>
-                    <ul>
-                        <li data-tooltip="Stealthy aiming without anyone noticing.">Silent Aim</li>
-                        <li data-tooltip="Automatically compensate for weapon recoil.">Recoil Control</li>
-                        <li data-tooltip="Fire automatically when your target is in sight.">Triggerbot</li>
-                        <li data-tooltip="Customizable field of view for realistic play.">FOV Adjustment</li>
-                    </ul>
-                </div>
+          <!-- Legitbot Feature -->
+          <div class="feature-card">
+            <h3>🎯 Legitbot</h3>
+            <ul>
+              <li data-tooltip="Stealth aiming without being noticed">Silent Aim</li>
+              <li data-tooltip="Automatically compensate for recoil">Recoil Control</li>
+              <li data-tooltip="Auto-fire when target is on crosshair">Triggerbot</li>
+              <li data-tooltip="Adjust field of view for realistic play">FOV Adjustment</li>
+            </ul>
+          </div>
 
-                <!-- Miscellaneous Feature -->
-                <div class="feature-card">
-                    <h3>🛠️ Miscellaneous</h3>
-                    <ul>
-                        <li data-tooltip="Permanent skins visible to everyone.">Server-Side Skin Changer</li>
-                        <li data-tooltip="Save, load, and share your setups.">Config Sharing</li>
-                        <li data-tooltip="Fully customizable with Lua support.">Lua Scripting</li>
-                        <li data-tooltip="Access any weapon or knife skin.">Inventory Changer</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+          <!-- Misc Feature -->
+          <div class="feature-card">
+            <h3>🛠️ Misc</h3>
+            <ul>
+              <li data-tooltip="Show skins server-side, visible to everyone">Server-Side Skin Changer</li>
+              <li data-tooltip="Save, load, and share your setups">Config Sharing</li>
+              <li data-tooltip="Fully customizable via Lua">Lua Scripting</li>
+              <li data-tooltip="Access any weapon or knife skin">Inventory Changer</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Download Button -->
-<!-- Download Button -->
-<section class="download">
-    <a href="#" class="download-btn" data-tooltip="Closed Beta: Download not available.">Download</a>
-</section>
+    <!-- Download -->
+    <section class="download">
+      <a
+        href="#"
+        class="download-btn"
+        aria-disabled="true"
+        role="button"
+        data-tooltip="Closed Beta: Download not available."
+      >Download</a>
+    </section>
 
-
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        <p>© 2025 Niggaware. All rights reserved.</p>
+      <p>© 2025 NovaWare. All rights reserved.</p>
     </footer>
-
-    <!-- JavaScript-Datei einfügen -->
-    <script src="script.js" defer></script>
-</body>
+  </body>
 </html>

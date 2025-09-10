@@ -1,302 +1,292 @@
-/* General Styling */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000; /* Schwarzer Hintergrund */
-    color: #fff; /* Weiße Schrift */
-    overflow-x: hidden; /* Kein horizontales Scrollen */
-    line-height: 1.6;
-}
-
-/* Header Section */
-header {
-    text-align: center;
-    padding: 2rem;
-    background-color: #b30000; /* Dunkelrot */
-    color: #fff;
-    text-transform: uppercase;
-      position: relative;
-  overflow: hidden; /* Aurora-Effekt bleibt im Header-Bereich */
-}
-
-header h1 {
-    font-size: 3rem;
-    margin: 0;
-}
-
-header p {
-    margin: 0.5rem 0 0;
-    font-size: 1.2rem;
-    color: #ffe6e6; /* Helles Rot */
-}
-
-/* Carousel Section */
-.carousel {
-    position: relative;
-    max-width: 100%;
-    margin: 2rem auto;
-    overflow: hidden; /* Überschüssige Inhalte ausblenden */
-}
-
-.carousel-wrapper {
-    display: flex; /* Horizontale Ausrichtung der Slides */
-    transition: transform 0.5s ease-in-out; /* Sanfte Bewegung beim Wechseln */
-    width: 100%;
-}
-
-.carousel-item {
-    flex: 0 0 100%; /* Nur ein Slide sichtbar */
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Zwei Spalten: Bild und Text */
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-.carousel-item img {
-    max-width: 90%; /* Bild passt sich an die Breite an */
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Schatten für das Bild */
-}
-
-.carousel-text {
-    padding: 1rem;
-    text-align: left; /* Text links ausgerichtet */
-}
-
-.carousel-text h3 {
-    font-size: 1.8rem;
-    color: #ff1a1a; /* Helles Rot */
-    margin-bottom: 0.5rem;
-}
-
-.carousel-text p {
-    font-size: 1rem;
-    color: #ccc; /* Hellgrau */
-}
-
-/* Carousel Controls */
-.carousel-prev,
-.carousel-next {
-    position: absolute;
-    top: 50%; /* Zentriert in der Höhe */
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
-    color: white;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 10;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-}
-
-.carousel-prev {
-    left: 1rem;
-}
-
-.carousel-next {
-    right: 1rem;
-}
-
-/* Features Section */
-.features {
-    text-align: center;
-    padding: 2rem;
-}
-
-.features h2 {
-    color: #ff1a1a;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsives Grid */
-    gap: 1.5rem;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.feature-card {
-    background: #1a1a1a;
-    border: 1px solid #b30000; /* Roter Rand */
-    padding: 1rem;
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.feature-card:hover {
-    transform: scale(1.05); /* Leichtes Vergrößern bei Hover */
-    box-shadow: 0 5px 15px rgba(255, 26, 26, 0.4); /* Schatten bei Hover */
-}
-
-.feature-card h3 {
-    color: #ff4d4d; /* Helleres Rot */
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-.feature-card ul {
-    list-style: none; /* Keine Aufzählungszeichen */
-    padding: 0;
-    margin: 0;
-}
-
-.feature-card ul li {
-    position: relative;
-    padding: 0.5rem 0;
-    cursor: pointer;
-}
-
-/* Tooltip Styling */
-.tooltip {
-    visibility: hidden; /* Standardmäßig unsichtbar */
-    opacity: 0;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.8); /* Dunkler Hintergrund */
-    color: #fff; /* Weiße Schrift */
-    padding: 0.5rem;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    white-space: nowrap; /* Kein Zeilenumbruch */
-    z-index: 1000; /* Tooltip immer oben anzeigen */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Sanftes Einblenden */
-    pointer-events: none; /* Tooltip blockiert keine Klicks */
-}
-
-.feature-card ul li:hover .tooltip {
-    visibility: visible;
-    opacity: 1; /* Tooltip sichtbar machen */
-}
-
-/* Download Button */
-
-/* Download Button */
-.download-btn {
-    position: relative;
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: #b30000; /* Roter Hintergrund */
-    color: white;
-    border-radius: 5px;
-    text-transform: uppercase;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s ease;
-    text-decoration: line-through; /* Text durchstreichen */
-    cursor: not-allowed; /* Zeigt an, dass der Button nicht klickbar ist */
-}
-
-.download-btn:hover {
-    transform: scale(1.05); /* Leichtes Vergrößern bei Hover */
-    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4); /* Schatteneffekt */
-}
-
-/* Tooltip für den Download-Button */
-.download-btn::after {
-    content: attr(data-tooltip); /* Tooltip-Text aus dem Attribut */
-    position: absolute;
-    bottom: calc(100% + 10px); /* Tooltip oberhalb des Buttons */
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8); /* Dunkler Hintergrund für Tooltip */
-    color: #fff; /* Weiße Schriftfarbe */
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    border-radius: 5px;
-    white-space: nowrap; /* Kein Zeilenumbruch */
-    opacity: 0; /* Unsichtbar standardmäßig */
-    visibility: hidden; /* Unsichtbar standardmäßig */
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    pointer-events: none; /* Tooltip blockiert keine Klicks */
-    z-index: 1000; /* Immer über anderen Elementen anzeigen */
-}
-
-.download-btn:hover::after {
-    opacity: 1; /* Tooltip sichtbar */
-    visibility: visible; /* Tooltip anzeigen */
-}
-
-.download {
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.download-btn {
-    padding: 1rem 2rem;
-    background: #b30000; /* Roter Hintergrund */
-    color: white;
-    border-radius: 5px;
-    text-transform: uppercase;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.download-btn:hover {
-    transform: scale(1.1); /* Vergrößerung bei Hover */
-    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4); /* Schatteneffekt */
-}
-
-/* Footer Section */
-footer {
-    text-align: center;
-    padding: 0.2rem;
-    background: #1a1a1a; /* Dunkelgrauer Hintergrund */
-    color: white;
-    border-top: 1px solid #b30000; /* Oberer Rand in Rot */
-}
-
-
-
-
+/*
+  style.css — complete, accessible, no-peek slider
+  Matches index.html (#feature-preview .slider) and script.js
+*/
 
 :root {
-  --bg-header: #ff0000; /* Roter Hintergrund für den Header */
-  --fs: clamp(2rem, 8vw, 5rem); /* Dynamische Schriftgröße */
+  color-scheme: dark;
+
+  /* Design tokens */
+  --bg: #0a0a0a;
+  --fg: #f5f5f5;
+  --muted: #cfcfcf;
+  --border: #2a2a2a;
+  --accent: #e01717;
+  --accent-700: #b30000;
+  --card: #151515;
+
+  --shadow: 0 10px 30px rgba(0,0,0,.5);
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  /* Slider knobs */
+  --viewport-padding: 1rem;   /* inner side padding inside visible viewport */
+  --arrow-gap: 0.25rem;       /* tiny visual gap near viewport edge        */
+  --arrow-outside: 3.25rem;   /* how far arrows sit OUTSIDE the viewport   */
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --fg: #0b0b0b;
+    --muted: #444;
+    --card: #f6f6f7;
+    --border: #e6e6e8;
+    --shadow: 0 10px 30px rgba(0,0,0,.08);
+    --accent: #e01717;
+    --accent-700: #c20c0c;
+  }
+}
+
+/* Base / reset */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: #000000; /* Schwarzer Hintergrund für den Rest der Seite */
-  color: #ffffff;
-  font-family: "Inter", Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--fg);
 }
 
+img { display: block; max-width: 100%; height: auto; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.skip-link {
+  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem; top: 1rem; width: auto; height: auto;
+  background: var(--card); color: var(--fg);
+  padding: .5rem .75rem; border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow);
+}
+
+.content { width: min(1200px, 100%); margin-inline: auto; padding-inline: 1rem; }
+
+/* =========================
+   Header
+   ========================= */
 header {
   position: relative;
-  background-color: #ff0000; /* Roter Hintergrund für den Header */
   text-align: center;
-  padding: 2rem;
-  color: #ffffff;
+  padding-block: clamp(2rem, 6vw, 4rem);
+  background: linear-gradient(180deg, var(--accent-700), #7a0000 70%, transparent 100%);
+  overflow: hidden;
 }
-
+header::before {
+  content: "";
+  position: absolute; inset: -30% -10% auto -10%; height: 140%;
+  background:
+    radial-gradient(60% 60% at 50% 40%, rgba(255,255,255,.08), transparent 60%),
+    radial-gradient(50% 50% at 70% 60%, rgba(255,77,77,.18), transparent 60%);
+  filter: blur(24px) saturate(1.1);
+  pointer-events: none;
+}
 .title {
-  font-size: clamp(2rem, 8vw, 5rem); /* Dynamische Schriftgröße */
+  margin: 0 0 .25rem 0;
+  font-size: clamp(2rem, 8vw, 5rem);
   font-weight: 800;
-  letter-spacing: clamp(-1.75px, -0.25vw, -3.5px);
+  letter-spacing: clamp(-1.5px, -0.25vw, -3px);
   text-transform: uppercase;
+  background: linear-gradient(90deg, #ffffff, #ffd6d6, #ffffff);
+  background-size: 300% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: gradient-scroll 10s linear infinite;
+}
+.tagline { margin: .5rem 0 0; font-size: clamp(1rem, 2.5vw, 1.2rem); color: #ffe6e6; opacity: .95; }
+@keyframes gradient-scroll { 0%{background-position: 100% 0} 100%{background-position: -200% 0} }
+
+/* =========================
+   Slider (viewport model, no peek)
+   ========================= */
+/* ===== Slider (no-peek, arrows fully outside) ===== */
+.slider {
   position: relative;
-  background: linear-gradient(90deg, #ffffff, #ff0000, #ff5555, #ffffff); /* Farbverlauf */
-  background-size: 300% 100%; /* Breiterer Hintergrund für nahtlose Bewegung */
-  background-clip: text; /* Standard-Eigenschaft für moderne Browser */
-  -webkit-background-clip: text; /* Webkit-spezifisch */
-  -webkit-text-fill-color: transparent; /* Füllt den Text mit dem Verlauf */
-  animation: gradient-scroll 10s linear infinite; /* Langsamere Animation */
+  max-width: 1200px;
+  margin: clamp(1.5rem, 5vw, 3rem) auto;
+  padding-inline: 0;
+  --viewport-padding: 1rem;
+  --arrow-gap: 0.25rem;
+  --arrow-outside: 3.25rem;
 }
 
-@keyframes gradient-scroll {
-  0% {
-    background-position: 100% 0%; /* Start vollständig rechts */
-  }
-  100% {
-    background-position: -200% 0%; /* Ende vollständig links */
-  }
+.slider-viewport {
+  overflow: hidden;                           /* clip neighbors */
+  padding-inline: var(--viewport-padding);
 }
 
+.slider-track {
+  position: relative; z-index: 1;
+  display: flex;
+  /* WICHTIG: exakte Breite = count * 100% (count kommt aus JS) */
+  width: calc(100% * var(--count, 1));
+  transform: translate3d(0,0,0);
+  transition: transform .5s ease-in-out;
+  will-change: transform;
 
+  /* Reset gegen UA-Defaults (verhindert Peeking) */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
 
+.slide {
+  /* WICHTIG: jede Slide exakt 100% / count breit */
+  flex: 0 0 auto;
+  width: calc(100% / var(--count, 1));
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.slide-media img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+}
+
+.slide-copy { text-align: left; }
+.slide-copy h3 { margin: 0 0 .5rem; font-size: clamp(1.2rem, 2.4vw, 1.8rem); color: #ff4d4d; }
+.slide-copy p  { margin: 0; color: #cfcfcf; }
+
+/* Pfeile außerhalb der Viewport-Kante */
+.slider-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; display: grid; place-items: center;
+  border-radius: 999px; border: 1px solid #2a2a2a;
+  background: rgba(20,20,20,.65); backdrop-filter: saturate(1.2) blur(6px);
+  color: #f5f5f5; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  transition: transform .2s, background .2s, border-color .2s;
+  z-index: 3;
+}
+.slider-nav.prev {
+  left: calc(-1 * (var(--arrow-outside) + var(--viewport-padding)) + env(safe-area-inset-left, 0));
+}
+.slider-nav.next {
+  right: calc(-1 * (var(--arrow-outside) + var(--viewport-padding)) + env(safe-area-inset-right, 0));
+}
+.slider-nav:hover { transform: translateY(-50%) scale(1.05); background: rgba(30,30,30,.75); }
+
+/* Dots */
+.slider-dots { display: flex; gap: .5rem; justify-content: center; margin-top: .75rem; }
+.slider-dots button {
+  width: 10px; height: 10px; border-radius: 999px; border: 0; background: #555; opacity: .5;
+  cursor: pointer; transition: transform .2s, opacity .2s, background .2s;
+}
+.slider-dots button[aria-selected="true"] { opacity: 1; background: #ff4d4d; transform: scale(1.15); }
+
+@media (max-width: 900px) {
+  .slide { grid-template-columns: 1fr; }
+  .slide-copy { text-align: center; }
+  .slider { --arrow-outside: 2.25rem; }
+}
+@media (max-width: 640px) { .slider { --arrow-outside: 1rem; } }
+
+/* =========================
+   Features
+   ========================= */
+.features { text-align: center; padding-block: clamp(2rem, 6vw, 4rem); }
+.features h2 {
+  color: #ff4d4d; font-size: clamp(1.4rem, 3.2vw, 2rem);
+  text-transform: uppercase; letter-spacing: .08em; margin: 0 0 1.25rem 0;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+.feature-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.feature-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+  box-shadow: 0 12px 34px rgba(255, 40, 40, .15);
+}
+.feature-card h3 { margin: 0 0 .75rem 0; color: #ff6666; font-size: 1.1rem; }
+.feature-card ul { list-style: none; padding: 0; margin: 0; }
+.feature-card li { position: relative; padding: .45rem 0; }
+
+/* =========================
+   Tooltip (single instance created by JS)
+   ========================= */
+.tooltip {
+  position: fixed; z-index: 1000;
+  background: rgba(0,0,0,.88); color: #fff;
+  padding: .5rem .65rem; font-size: .92rem;
+  border-radius: 8px; border: 1px solid #333;
+  box-shadow: var(--shadow); pointer-events: none;
+  opacity: 0; transform: translateY(-4px);
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+/* =========================
+   Download
+   ========================= */
+.download { text-align: center; margin: clamp(1.5rem, 5vw, 3rem) 0; }
+.download-btn {
+  position: relative; display: inline-flex; align-items: center; gap: .5rem;
+  padding: .95rem 1.35rem; background: var(--accent); color: #fff;
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  text-transform: uppercase; letter-spacing: .06em; font-weight: 750;
+  text-decoration: none; box-shadow: 0 6px 18px rgba(224,23,23,.25);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  user-select: none;
+}
+.download-btn[aria-disabled="true"] { cursor: not-allowed; filter: saturate(.7) brightness(.9); }
+.download-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(224,23,23,.28); }
+.download-btn::after {
+  content: attr(data-tooltip);
+  position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,.85); color: #fff; padding: .5rem .65rem; font-size: .9rem;
+  border-radius: 8px; border: 1px solid #333; white-space: nowrap;
+  opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s; pointer-events: none;
+}
+.download-btn:hover::after { opacity: 1; visibility: visible; }
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  text-align: center; padding: .75rem 1rem;
+  background: var(--card); color: var(--fg);
+  border-top: 1px solid var(--border);
+}
+
+/* =========================
+   No-JS fallback (validator-safe)
+   ========================= */
+.no-js .slider-viewport { overflow: visible; }
+.no-js .slider-track   { display: block; transform: none !important; }
+.no-js .slide          { display: block; margin-bottom: 1rem; }
+.no-js .slider-nav,
+.no-js .slider-dots    { display: none; }
+
+/* =========================
+   Reduced motion
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
